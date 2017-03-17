@@ -18,6 +18,7 @@ var ConsecutiveChecker = (function(){
                 return false;
             }
         }else{
+            this.setArray(id,ts);
             return true;
         }
     };
@@ -38,7 +39,7 @@ var ConsecutiveChecker = (function(){
     ConsecutiveChecker.prototype.checkTs = function(index,ts,sec){
         var array = this.getArray();
 
-        if(ts - array[index][1] >= sec){
+        if(ts - array[index][1] > sec){
             return true;
         }else{
             return false;
@@ -62,6 +63,3 @@ var ConsecutiveChecker = (function(){
     
     return ConsecutiveChecker;
 }());
-
-var test = new ConsecutiveChecker();
-console.log(test);
