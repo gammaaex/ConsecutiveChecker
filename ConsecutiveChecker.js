@@ -6,11 +6,11 @@ var ConsecutiveChecker = (function(){
         this.idAndTsArray = [];
     };
     
-    ConsecutiveChecker.prototype.run = function(id,ts){ 
+    ConsecutiveChecker.prototype.run = function(id,ts,time){ 
         var index = this.checkID(id);
         
         if(index >= 0){
-            if(this.checkTs(index,ts,10)){
+            if(this.checkTs(index,ts,time)){
                 this.removeArrayElement(index);
                 this.setArray(id,ts);
                 return true;
