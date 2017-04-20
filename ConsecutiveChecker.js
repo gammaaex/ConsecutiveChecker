@@ -13,13 +13,15 @@ var ConsecutiveChecker = (function(){
             if(this.checkTs(index,ts,time)){
                 this.removeArrayElement(index);
                 this.setArray(id,ts);
-                return true;
-            }else{
                 return false;
+            }else{
+                this.removeArrayElement(index);
+                this.setArray(id,ts);
+                return true;
             }
         }else{
             this.setArray(id,ts);
-            return true;
+            return false;
         }
     };
     
